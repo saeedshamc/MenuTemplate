@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import Header from './components/Header'
+import Hero from './components/Hero'
 import SearchBar from './components/SearchBar'
 import CategoryTabs from './components/CategoryTabs'
 import MenuGrid from './components/MenuGrid'
@@ -28,6 +29,7 @@ function App() {
   return (
     <div className="min-h-screen">
       <Header theme={theme} onToggleTheme={toggleTheme} />
+      <Hero />
 
       <main className="mx-auto max-w-5xl px-5 py-8 sm:px-8">
         <div className="mb-8 flex flex-col gap-4">
