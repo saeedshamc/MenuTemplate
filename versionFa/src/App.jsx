@@ -91,6 +91,9 @@ function App() {
       </header>
 
       <main className="content">
+        <div className="results-count">
+          {filteredItems.length.toLocaleString('fa-IR')} مورد یافت شد
+        </div>
         {filteredItems.length === 0 ? (
           <div className="empty-state">
             <span>😕</span>

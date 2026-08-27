@@ -1,10 +1,27 @@
-import { formatPrice } from '../data/menuData'
+import { useState } from 'react'
+import { formatPrice, getImageUrl } from '../data/menuData'
 
 export default function MenuCard({ item }) {
+  const [imgFailed, setImgFailed] = useState(false)
+
   return (
     <div className="menu-card">
       {item.popular && <span className="badge">پرطرفدار</span>}
-      <div className="menu-card-icon">{item.icon}</div>
+
+      <div className="menu-card-media">
+        {!imgFailed ? (
+          <img
+            src={getImageUrl(item)}
+            alt={item.name}
+            loading="lazy"
+            onError={() => setImgFailed(true)}
+            className="menu-card-img"
+          />
+        ) : (
+          <div className="menu-card-img-fallback">{item.icon}</div>
+        )}
+      </div>
+
       <div className="menu-card-body">
         <div className="menu-card-top">
           <h3>{item.name}</h3>
