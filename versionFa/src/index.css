@@ -12,6 +12,11 @@
   --chip-bg: #ffffff;
   --chip-active-bg: #241a12;
   --chip-active-text: #ffffff;
+  --logo-bg: #fff4e6;
+  --logo-ring: #d9782d;
+  --logo-fg: #d9782d;
+  --logo-steam: #e8a765;
+  --hero-overlay: linear-gradient(180deg, rgba(30, 18, 8, 0.35) 0%, rgba(23, 14, 7, 0.72) 60%, var(--bg) 100%);
 }
 
 [data-theme='dark'] {
@@ -28,6 +33,11 @@
   --chip-bg: #221b16;
   --chip-active-bg: #ef9b52;
   --chip-active-text: #1a1410;
+  --logo-bg: #2a2018;
+  --logo-ring: #ef9b52;
+  --logo-fg: #ef9b52;
+  --logo-steam: #f4c391;
+  --hero-overlay: linear-gradient(180deg, rgba(10, 7, 4, 0.55) 0%, rgba(8, 6, 4, 0.88) 65%, var(--bg) 100%);
 }
 
 * {
@@ -54,7 +64,67 @@ body {
 .app {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 20px 16px 60px;
+  padding: 0 16px 60px;
+}
+
+/* ---------------- Hero (appetizing background) ---------------- */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image:
+    var(--hero-overlay),
+    url('https://loremflickr.com/1600/560/gourmet,food,delicious/all?lock=777');
+  background-size: cover;
+  background-position: center;
+  background-color: var(--accent-soft);
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero-content svg circle {
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
+}
+
+.hero-content h1 {
+  margin: 4px 0 0;
+  font-size: 34px;
+  font-weight: 800;
+  color: #fff8f0;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.hero-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #f3e6d8;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+.hero .theme-toggle {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 2;
 }
 
 /* ---------------- Header ---------------- */
@@ -63,45 +133,8 @@ body {
   top: 0;
   z-index: 10;
   background: var(--bg);
-  padding-top: 8px;
+  padding-top: 16px;
   padding-bottom: 12px;
-}
-
-.header-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 18px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.brand-icon {
-  font-size: 32px;
-  background: var(--accent-soft);
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 16px;
-}
-
-.brand h1 {
-  margin: 0;
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-}
-
-.brand p {
-  margin: 2px 0 0;
-  font-size: 13px;
-  color: var(--text-secondary);
 }
 
 /* ---------------- Theme toggle ---------------- */
@@ -143,6 +176,16 @@ body {
   font-size: 14px;
   box-shadow: var(--shadow);
   transition: transform 0.3s ease;
+}
+
+.hero .toggle-track {
+  background: rgba(20, 14, 8, 0.45);
+  backdrop-filter: blur(6px);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.hero .toggle-thumb {
+  background: #fff8f0;
 }
 
 /* ---------------- Search ---------------- */

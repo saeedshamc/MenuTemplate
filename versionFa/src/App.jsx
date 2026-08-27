@@ -3,6 +3,7 @@ import { sections, menuItems } from './data/menuData'
 import ThemeToggle from './components/ThemeToggle'
 import SearchBar from './components/SearchBar'
 import MenuCard from './components/MenuCard'
+import Logo from './components/Logo'
 
 function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem('menu-theme') || 'light')
@@ -42,75 +43,76 @@ function App() {
   }, [activeSection, activeCategory, query])
 
   return (
-    <div className="app">
-      <header className="header">
-        <div className="header-top">
-          <div className="brand">
-            <span className="brand-icon">🍴</span>
-            <div>
-              <h1>ذائقه</h1>
-              <p>رستوران · کافه · بستنی‌فروشی</p>
-            </div>
-          </div>
-          <ThemeToggle theme={theme} onToggle={toggleTheme} />
+    <div className="app-wrapper">
+      <section className="hero">
+        <div className="hero-overlay" />
+        <ThemeToggle theme={theme} onToggle={toggleTheme} />
+        <div className="hero-content">
+          <Logo size={64} />
+          <h1>دلچین</h1>
+          <p>رستوران · کافه · بستنی‌فروشی — طعمی که دلت می‌خواد</p>
         </div>
+      </section>
 
-        <SearchBar value={query} onChange={setQuery} />
+      <div className="app">
+        <header className="header">
+          <SearchBar value={query} onChange={setQuery} />
 
-        <nav className="sections">
-          <button
-            className={`section-chip ${activeSection === 'all' ? 'active' : ''}`}
-            onClick={() => setActiveSection('all')}
-          >
-            <span>🧾</span> همه
-          </button>
-          {sections.map((s) => (
+          <nav className="sections">
             <button
-              key={s.id}
-              className={`section-chip ${activeSection === s.id ? 'active' : ''}`}
-              onClick={() => setActiveSection(s.id)}
+              className={`section-chip ${activeSection === 'all' ? 'active' : ''}`}
+              onClick={() => setActiveSection('all')}
             >
-              <span>{s.icon}</span> {s.label}
+              <span>🧾</span> همه
             </button>
-          ))}
-        </nav>
-
-        {categories.length > 1 && (
-          <div className="categories">
-            {categories.map((c) => (
+            {sections.map((s) => (
               <button
-                key={c}
-                className={`category-pill ${activeCategory === c ? 'active' : ''}`}
-                onClick={() => setActiveCategory(c)}
+                key={s.id}
+                className={`section-chip ${activeSection === s.id ? 'active' : ''}`}
+                onClick={() => setActiveSection(s.id)}
               >
-                {c === 'all' ? 'همه دسته‌ها' : c}
+                <span>{s.icon}</span> {s.label}
               </button>
             ))}
-          </div>
-        )}
-      </header>
+          </nav>
 
-      <main className="content">
-        <div className="results-count">
-          {filteredItems.length.toLocaleString('fa-IR')} مورد یافت شد
-        </div>
-        {filteredItems.length === 0 ? (
-          <div className="empty-state">
-            <span>😕</span>
-            <p>موردی با این مشخصات پیدا نشد.</p>
-          </div>
-        ) : (
-          <div className="menu-grid">
-            {filteredItems.map((item) => (
-              <MenuCard key={item.id} item={item} />
-            ))}
-          </div>
-        )}
-      </main>
+          {categories.length > 1 && (
+            <div className="categories">
+              {categories.map((c) => (
+                <button
+                  key={c}
+                  className={`category-pill ${activeCategory === c ? 'active' : ''}`}
+                  onClick={() => setActiveCategory(c)}
+                >
+                  {c === 'all' ? 'همه دسته‌ها' : c}
+                </button>
+              ))}
+            </div>
+          )}
+        </header>
 
-      <footer className="footer">
-        <p>این یک نمونه‌کار (Portfolio) طراحی‌شده با React است — © {new Date().getFullYear()} ذائقه</p>
-      </footer>
+        <main className="content">
+          <div className="results-count">
+            {filteredItems.length.toLocaleString('fa-IR')} مورد یافت شد
+          </div>
+          {filteredItems.length === 0 ? (
+            <div className="empty-state">
+              <span>😕</span>
+              <p>موردی با این مشخصات پیدا نشد.</p>
+            </div>
+          ) : (
+            <div className="menu-grid">
+              {filteredItems.map((item) => (
+                <MenuCard key={item.id} item={item} />
+              ))}
+            </div>
+          )}
+        </main>
+
+        <footer className="footer">
+          <p>این یک نمونه‌کار (Portfolio) طراحی‌شده با React است — © {new Date().getFullYear()} دلچین</p>
+        </footer>
+      </div>
     </div>
   )
 }
