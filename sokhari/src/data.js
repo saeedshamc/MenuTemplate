@@ -1,5 +1,5 @@
 // داده‌های منوی سوخاری کلویی
-window.CATEGORIES = [
+export const CATEGORIES = [
   { id: 'classic', name: 'سوخاری‌های کلاسیک', icon: 'bucket' },
   { id: 'sandwich', name: 'ساندویچ و برگر', icon: 'sandwich' },
   { id: 'strips', name: 'استریپس و ناگت', icon: 'strips' },
@@ -9,7 +9,7 @@ window.CATEGORIES = [
   { id: 'sauces', name: 'سس‌های مخصوص', icon: 'sauce' },
 ];
 
-window.PRODUCTS = [
+export const PRODUCTS = [
   {
     id: 1, category: 'classic', name: 'سینی خانواده کلویی (۸ تکه)',
     price: 465000, prep: 25, badge: 'best',

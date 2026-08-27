@@ -1,6 +1,6 @@
-const { useState, useMemo, useEffect, useRef } = React;
-const { CATEGORIES, PRODUCTS } = window;
-const Icons = window.Icons;
+import { useState, useMemo, useRef } from 'react';
+import { CATEGORIES, PRODUCTS } from './data.js';
+import Icons from './icons.jsx';
 
 function normalize(str) {
   return (str || '')
@@ -77,7 +77,7 @@ function ProductCard({ product, qty, onAdd, onRemove }) {
   );
 }
 
-function App() {
+export default function App() {
   const [query, setQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
   const [cart, setCart] = useState({});
@@ -136,7 +136,7 @@ function App() {
   }, 0);
 
   return (
-    <React.Fragment>
+    <>
       <header className="top-header">
         <div className="brand-row">
           <div className="brand">
@@ -247,8 +247,6 @@ function App() {
       <footer className="footer">
         © {new Date().getFullYear()} <b>کلویی</b> — طعم ترد، همیشه تازه.
       </footer>
-    </React.Fragment>
+    </>
   );
 }
-
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
