@@ -46,7 +46,7 @@ export default function App() {
           <Logo size={88} />
           <p className="eyebrow">Fire · Fiesta · Fresh</p>
           <h1>فیستا</h1>
-          <p className="tagline">جشن طعم مکزیک — تاکو آتشین، بوریتو پر و سالسای تازه</p>
+          <p className="tagline">طعم مکزیک — تاکوهای داغ، بوریتوهای پُر و سالسای تازه</p>
         </div>
       </section>
 
@@ -91,7 +91,7 @@ export default function App() {
 
         <footer className="footer">
           <strong>فیستا</strong>
-          <span>Fire · Fiesta · Fresh · از ساعت ۱۲ تا ۲۳</span>
+          <span>Fire · Fiesta · Fresh · هر روز ۱۲ تا ۲۳</span>
         </footer>
       </div>
     </div>
