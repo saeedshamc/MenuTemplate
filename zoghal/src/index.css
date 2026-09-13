@@ -1,0 +1,91 @@
+:root {
+  --bg: #f2ece4;
+  --bg-elevated: #faf6f0;
+  --text: #1a1612;
+  --muted: #6e6256;
+  --accent: #b87333;
+  --accent-deep: #8a5524;
+  --gold: #d4a574;
+  --border: #ddd0c0;
+  --shadow: 0 12px 32px rgba(26, 22, 18, 0.14);
+  --logo-bg: #1a1612;
+  --hero-overlay: linear-gradient(180deg, rgba(15, 12, 10, 0.4) 0%, rgba(15, 12, 10, 0.72) 48%, rgba(242, 236, 228, 0.97) 100%);
+  --chip: #faf6f0;
+  --chip-active: #1a1612;
+  --chip-active-text: #b87333;
+  --card-radius: 8px;
+}
+[data-theme='dark'] {
+  --bg: #0f0d0b;
+  --bg-elevated: #1a1612;
+  --text: #f2ece4;
+  --muted: #b8a894;
+  --accent: #d4a574;
+  --accent-deep: #e0b989;
+  --gold: #e8c49a;
+  --border: #2e2820;
+  --shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+  --logo-bg: #12100e;
+  --hero-overlay: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.82) 52%, rgba(15,13,11,0.98) 100%);
+  --chip: #1a1612;
+  --chip-active: #b87333;
+  --chip-active-text: #0f0d0b;
+}
+* { box-sizing: border-box; }
+html, body, #root { margin: 0; min-height: 100%; }
+body {
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+  background: radial-gradient(ellipse at top, rgba(184, 115, 51, 0.1), transparent 55%), var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.hero {
+  position: relative; min-height: 340px; display: grid; place-items: center;
+  background: var(--hero-overlay), url('/hero.png') center/cover no-repeat;
+  padding: 48px 20px 28px; text-align: center;
+}
+.hero-overlay { display: none; }
+.theme-toggle {
+  position: absolute; top: 18px; left: 18px; width: 44px; height: 44px;
+  border: 1px solid rgba(184, 115, 51, 0.4); border-radius: 6px;
+  background: rgba(10, 8, 6, 0.5); backdrop-filter: blur(8px); cursor: pointer; font-size: 1.1rem;
+}
+.hero-content { position: relative; z-index: 1; color: #f2ece4; display: grid; gap: 8px; justify-items: center; animation: rise 0.7s ease both; }
+.eyebrow { margin: 8px 0 0; letter-spacing: 0.22em; text-transform: uppercase; font-size: 0.72rem; color: var(--gold); font-weight: 600; font-family: 'Oswald', 'Vazirmatn', sans-serif; }
+.hero-content h1 { margin: 0; font-family: 'Oswald', 'Vazirmatn', sans-serif; font-size: clamp(2.6rem, 8vw, 4rem); font-weight: 700; text-shadow: 0 4px 24px rgba(0,0,0,0.45); }
+.tagline { margin: 0; max-width: 28rem; color: rgba(242,236,228,0.9); font-size: 1.02rem; line-height: 1.7; }
+.app { max-width: 1100px; margin: 0 auto; padding: 0 16px 64px; }
+.header { display: grid; gap: 14px; margin-top: -8px; margin-bottom: 22px; position: sticky; top: 0; z-index: 20; padding: 12px 0 8px; background: linear-gradient(180deg, var(--bg) 70%, transparent); }
+.search-bar { display: flex; align-items: center; gap: 10px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 6px; padding: 12px 16px; box-shadow: var(--shadow); }
+.search-icon { color: var(--accent); font-size: 1.1rem; }
+.search-bar input { flex: 1; border: 0; outline: 0; background: transparent; color: var(--text); font: inherit; font-size: 0.98rem; }
+.categories { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+.categories button { flex: 0 0 auto; border: 1px solid var(--border); background: var(--chip); color: var(--text); border-radius: 4px; padding: 8px 14px; font: inherit; font-size: 0.9rem; cursor: pointer; transition: 0.2s ease; }
+.categories button.active, .categories button:hover { background: var(--chip-active); color: var(--chip-active-text); border-color: transparent; }
+.results-count { color: var(--muted); font-size: 0.9rem; margin-bottom: 14px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.menu-card { position: relative; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--card-radius); overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; transition: transform 0.25s ease, box-shadow 0.25s ease; animation: rise 0.55s ease both; }
+.menu-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(26, 22, 18, 0.22); }
+.menu-card-media { aspect-ratio: 4/3; background: #1a1612; overflow: hidden; }
+.menu-card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.45s ease; }
+.menu-card:hover .menu-card-media img { transform: scale(1.05); }
+.menu-card-fallback { width: 100%; height: 100%; display: grid; place-items: center; font-size: 3rem; background: linear-gradient(135deg, #3a2e22, #0f0d0b); }
+.menu-card-body { padding: 14px 16px 16px; display: grid; gap: 8px; flex: 1; }
+.menu-card-top { display: flex; justify-content: space-between; gap: 10px; align-items: start; }
+.menu-card-top h3 { margin: 0; font-size: 1.05rem; line-height: 1.4; font-family: 'Oswald', 'Vazirmatn', sans-serif; font-weight: 600; }
+.prep { color: var(--muted); font-size: 0.78rem; white-space: nowrap; }
+.menu-card-body p { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.7; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tags span { font-size: 0.72rem; padding: 3px 8px; border-radius: 3px; background: rgba(184, 115, 51, 0.15); color: var(--accent-deep); }
+[data-theme='dark'] .tags span { background: rgba(212, 165, 116, 0.15); color: var(--gold); }
+.menu-card-footer { margin-top: auto; padding-top: 6px; border-top: 1px solid var(--border); }
+.menu-card-footer strong { color: var(--accent); font-size: 1.05rem; }
+.badge { position: absolute; top: 12px; right: 12px; z-index: 2; font-size: 0.72rem; font-weight: 700; padding: 5px 10px; border-radius: 3px; color: #0f0d0b; background: var(--accent); }
+.badge-spicy { background: #b45309; color: #fff; }
+.badge-new { background: #0f766e; color: #fff; }
+.badge-best { background: var(--accent); color: #0f0d0b; }
+.empty { text-align: center; padding: 48px 16px; color: var(--muted); background: var(--bg-elevated); border: 1px dashed var(--border); border-radius: 8px; }
+.footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; color: var(--muted); font-size: 0.9rem; }
+.footer strong { color: var(--accent); font-family: 'Oswald', 'Vazirmatn', sans-serif; font-size: 1.2rem; }
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@media (max-width: 640px) { .hero { min-height: 280px; padding-top: 56px; } .hero-content h1 { font-size: 2.4rem; } }
