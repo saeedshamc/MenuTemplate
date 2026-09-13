@@ -1,0 +1,24 @@
+# نورقهوه — Specialty Coffee
+
+منوی دیجیتال کافه با برندینگ مینیمال اسپشیالتی، لوگو و هیرو اختصاصی، جستجو، فیلتر دسته، تم روشن/تاریک و آمادهٔ دیپلوی روی Vercel.
+
+## اجرا
+
+```bash
+npm install
+npm run dev
+```
+
+## ساخت نسخه نهایی
+
+```bash
+npm run build
+npm run preview
+```
+
+## شخصی‌سازی
+
+- محصولات و قیمت‌ها: `src/data/menuData.js`
+- رنگ و حال‌وهوا: متغیرهای CSS در `src/index.css`
+- لوگو: `public/logo.svg`
+- تصویر هیرو: آدرس Unsplash در کلاس `.hero` داخل `src/index.css`
