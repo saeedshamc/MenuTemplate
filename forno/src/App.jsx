@@ -11,7 +11,7 @@ const DEFAULT_SETTINGS = {
   eyebrow: "Wood-Fired · Napoli Style",
   tagline: "پیتزای تنور چوبی — خمیر ۲۴ ساعته، آتش واقعی",
   footer: "تنور چوبی · از ساعت ۱۲ تا ۲۳",
-  heroImage: '/hero.png',
+  heroImage: `${import.meta.env.BASE_URL}hero.png`,
 }
 
 function normalize(str) {

@@ -11,7 +11,7 @@ const DEFAULT_SETTINGS = {
   eyebrow: "Scoop · Smile · Chill",
   tagline: "خانهٔ بستنی — اسکوپ رنگی و میلک‌شیک خنک",
   footer: "از ساعت ۱۲ تا ۲۴",
-  heroImage: '/hero.png',
+  heroImage: `${import.meta.env.BASE_URL}hero.png`,
 }
 
 function normalize(str) {

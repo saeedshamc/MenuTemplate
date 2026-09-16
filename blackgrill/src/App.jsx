@@ -11,7 +11,7 @@ const DEFAULT_SETTINGS = {
   eyebrow: "Smash · Smoke · Street",
   tagline: "برگر ذغالی — اسمش، دود و طعم خیابان",
   footer: "از ساعت ۱۲ تا ۲۴",
-  heroImage: '/hero.png',
+  heroImage: `${import.meta.env.BASE_URL}hero.png`,
 }
 
 function normalize(str) {

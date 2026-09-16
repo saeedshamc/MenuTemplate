@@ -11,7 +11,7 @@ const DEFAULT_SETTINGS = {
   eyebrow: "Velvet · Cocoa · Craft",
   tagline: "خانهٔ شکلات دست‌ساز — ترافل و دسر مخملی",
   footer: "از ساعت ۱۰ تا ۲۲",
-  heroImage: '/hero.png',
+  heroImage: `${import.meta.env.BASE_URL}hero.png`,
 }
 
 function normalize(str) {

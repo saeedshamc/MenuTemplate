@@ -11,7 +11,7 @@ const DEFAULT_SETTINGS = {
   eyebrow: "Mustard · Street · Snap",
   tagline: "هات‌داگ خیابانی — سوسیس داغ و اسنک سریع",
   footer: "از ساعت ۱۲ تا ۲۴",
-  heroImage: '/hero.png',
+  heroImage: `${import.meta.env.BASE_URL}hero.png`,
 }
 
 function normalize(str) {

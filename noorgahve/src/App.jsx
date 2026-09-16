@@ -11,7 +11,7 @@ const DEFAULT_SETTINGS = {
   eyebrow: "Specialty Coffee · Single Origin",
   tagline: "قهوهٔ اسپشیالتی — رُست تازه، دم‌آوری دقیق، لحظه‌ای آرام",
   footer: "Specialty Coffee · از ساعت ۸ تا ۲۲",
-  heroImage: '/hero.png',
+  heroImage: `${import.meta.env.BASE_URL}hero.png`,
 }
 
 function normalize(str) {

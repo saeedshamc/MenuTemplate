@@ -11,7 +11,7 @@ const DEFAULT_SETTINGS = {
   eyebrow: "Traditional Tea House",
   tagline: "چایخانه سنتی — عطر دمنوش و مهمان‌نوازی گرم",
   footer: "از ساعت ۹ تا ۲۴",
-  heroImage: '/hero.png',
+  heroImage: `${import.meta.env.BASE_URL}hero.png`,
 }
 
 function normalize(str) {
