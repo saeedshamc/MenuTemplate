@@ -1,0 +1,6 @@
+{
+  "buildCommand": "npm run build:showcase",
+  "outputDirectory": "site",
+  "framework": null,
+  "trailingSlash": true
+}

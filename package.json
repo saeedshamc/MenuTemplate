@@ -1,0 +1,11 @@
+{
+  "name": "menu-template-showcase",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "fix:base-urls": "node _tools/fix-base-urls.mjs",
+    "build:showcase": "node _tools/build-showcase.mjs",
+    "preview:showcase": "node _tools/preview-showcase.mjs"
+  }
+}

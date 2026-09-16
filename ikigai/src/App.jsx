@@ -11,7 +11,7 @@ const DEFAULT_SETTINGS = {
   eyebrow: "Omakase · Fresh Daily",
   tagline: "سوشی تازه روزانه — مینیمال، دقیق، پریمیوم",
   footer: "از ساعت ۱۲ تا ۲۳",
-  heroImage: '/hero.png',
+  heroImage: `${import.meta.env.BASE_URL}hero.png`,
 }
 
 function normalize(str) {

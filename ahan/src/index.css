@@ -64,7 +64,7 @@ body {
   min-height: 360px;
   display: grid;
   place-items: center;
-  background: var(--hero-overlay), url('/hero.png') center/cover no-repeat;
+  background: var(--hero-overlay);
   padding: 48px 20px 28px;
   text-align: center;
 }

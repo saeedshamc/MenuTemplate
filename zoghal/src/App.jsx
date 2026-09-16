@@ -11,7 +11,7 @@ const DEFAULT_SETTINGS = {
   eyebrow: "Wood · Night · Craft",
   tagline: "بار صنعتی شبانه — گریل ذغالی و ماکتل‌های دست‌ساز",
   footer: "از ساعت ۱۸ تا ۱ بامداد",
-  heroImage: '/hero.png',
+  heroImage: `${import.meta.env.BASE_URL}hero.png`,
 }
 
 function normalize(str) {

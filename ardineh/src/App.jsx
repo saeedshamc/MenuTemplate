@@ -11,7 +11,7 @@ const DEFAULT_SETTINGS = {
   eyebrow: "Fresh Baked Daily",
   tagline: "نانوایی و قنادی — عطر صبح و خمیر تازه",
   footer: "از ساعت ۷ تا ۲۱",
-  heroImage: '/hero.png',
+  heroImage: `${import.meta.env.BASE_URL}hero.png`,
 }
 
 function normalize(str) {

@@ -1,7 +1,7 @@
 export default function Logo({ size = 72 }) {
   return (
     <img
-      src="/logo.png"
+      src={`${import.meta.env.BASE_URL}logo.png`}
       alt="لوگوی شاهان"
       width={size}
       height={size}
