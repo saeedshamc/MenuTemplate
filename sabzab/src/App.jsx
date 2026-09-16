@@ -11,7 +11,7 @@ const DEFAULT_SETTINGS = {
   eyebrow: "Fresh · Pressed · Daily",
   tagline: "آبمیوه و اسموتی تازه — پرس روزانه، طعم طبیعی",
   footer: "از ساعت ۹ تا ۲۲",
-  heroImage: '/hero.png',
+  heroImage: `${import.meta.env.BASE_URL}hero.png`,
 }
 
 function normalize(str) {

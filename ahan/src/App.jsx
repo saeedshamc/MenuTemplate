@@ -11,7 +11,7 @@ const DEFAULT_SETTINGS = {
   eyebrow: "Iron · Fire · Reserve",
   tagline: "استیک‌هاوس فاخر — زغال، آهن و طعم‌های رزرو",
   footer: "از ساعت ۱۹ تا ۲۴",
-  heroImage: '/hero.png',
+  heroImage: `${import.meta.env.BASE_URL}hero.png`,
 }
 
 function normalize(str) {

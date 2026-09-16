@@ -11,7 +11,7 @@ const DEFAULT_SETTINGS = {
   eyebrow: "Street · Fast · Hot",
   tagline: "فودتراک خیابانی — سریع، داغ و پر از طعم",
   footer: "از ساعت ۱۲ تا ۲۴",
-  heroImage: '/hero.png',
+  heroImage: `${import.meta.env.BASE_URL}hero.png`,
 }
 
 function normalize(str) {

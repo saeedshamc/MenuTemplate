@@ -11,7 +11,7 @@ const DEFAULT_SETTINGS = {
   eyebrow: "Traditional Persian Grill",
   tagline: "چلوکبابی سنتی — آتش زغال و مهمان‌نوازی ایرانی",
   footer: "از ساعت ۱۲ تا ۲۳",
-  heroImage: '/hero.png',
+  heroImage: `${import.meta.env.BASE_URL}hero.png`,
 }
 
 function normalize(str) {

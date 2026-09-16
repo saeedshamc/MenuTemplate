@@ -11,7 +11,7 @@ const DEFAULT_SETTINGS = {
   eyebrow: "Leaf · Bowl · Balance",
   tagline: "سالادبار تازه — سبزی ترد و بول متعادل",
   footer: "از ساعت ۱۰ تا ۲۲",
-  heroImage: '/hero.png',
+  heroImage: `${import.meta.env.BASE_URL}hero.png`,
 }
 
 function normalize(str) {

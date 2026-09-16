@@ -11,7 +11,7 @@ const DEFAULT_SETTINGS = {
   eyebrow: "Brunch · Sunshine · Slow",
   tagline: "برانچ آفتابی و بی‌عجله — صبحانه‌های تازه",
   footer: "از ساعت ۸ تا ۱۶",
-  heroImage: '/hero.png',
+  heroImage: `${import.meta.env.BASE_URL}hero.png`,
 }
 
 function normalize(str) {
